@@ -1,0 +1,12 @@
+# file: /etc/systemd/system/raspi_button_action.service
+#
+
+[Unit]
+Description=Start halt-and-reset and restart NIC daemon
+
+[Service]
+RemainAfterExit=true
+ExecStart=/usr/bin/python /home/alf/scripts/pi-shutdown/pishutdown.py
+
+[Install]
+WantedBy=multi-user.target
